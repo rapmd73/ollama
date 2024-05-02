@@ -170,6 +170,18 @@ type EmbeddingResponse struct {
 	Embedding []float64 `json:"embedding"`
 }
 
+type TokenizeRequest struct {
+	Model     string    `json:"model"`
+	Prompt    string    `json:"prompt"`
+	KeepAlive *Duration `json:"keep_alive,omitempty"`
+
+	Options map[string]interface{} `json:"options"`
+}
+
+type TokenizeResponse struct {
+	Tokens []int `json:"tokens"`
+}
+
 type CreateRequest struct {
 	Model        string `json:"model"`
 	Path         string `json:"path"`
