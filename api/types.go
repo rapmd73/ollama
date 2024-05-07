@@ -94,9 +94,10 @@ type Message struct {
 }
 
 type ChatResponse struct {
-	Model     string    `json:"model"`
-	CreatedAt time.Time `json:"created_at"`
-	Message   Message   `json:"message"`
+	Model        string    `json:"model"`
+	CreatedAt    time.Time `json:"created_at"`
+	Message      Message   `json:"message"`
+	FinishReason string    `json:"finish_reason,omitempty"`
 
 	Done bool `json:"done"`
 
@@ -261,9 +262,10 @@ type TokenResponse struct {
 }
 
 type GenerateResponse struct {
-	Model     string    `json:"model"`
-	CreatedAt time.Time `json:"created_at"`
-	Response  string    `json:"response"`
+	Model        string    `json:"model"`
+	CreatedAt    time.Time `json:"created_at"`
+	Response     string    `json:"response"`
+	FinishReason string    `json:"finish_reason,omitempty"`
 
 	Done    bool  `json:"done"`
 	Context []int `json:"context,omitempty"`
